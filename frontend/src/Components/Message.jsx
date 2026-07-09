@@ -13,16 +13,15 @@ import {
 import style from "../Style/message.module.css";
 
 function Message({ messages, isTyping }) {
-  const bottomRef = useRef(null);
-
+  const chatRef = useRef(null);
   const [copiedId, setCopiedId] = useState(null);
   const [feedback, setFeedback] = useState({});
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }, [messages]);
+  if (chatRef.current) {
+    chatRef.current.scrollTop = chatRef.current.scrollHeight;
+  }
+}, [messages, isTyping]);
 
   const copyText = async (id, text) => {
     try {
@@ -41,7 +40,10 @@ function Message({ messages, isTyping }) {
   
 
   return (
-    <div className={style.chatBody}>
+   <div
+  ref={chatRef}
+  className={style.chatBody}
+>
     {messages.length === 0 ? (
       <div className={style.welcome}>
         <div className={style.welcomeIcon}>🤖</div>
@@ -153,7 +155,7 @@ function Message({ messages, isTyping }) {
     </>
   )}
 
-      <div ref={bottomRef} />
+      
       
    
   </div>
