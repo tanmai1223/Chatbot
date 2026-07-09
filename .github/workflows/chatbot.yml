@@ -1,9 +1,10 @@
-name: TODO CI
+name: Chatbot CI
 
 on:
   push:
     branches:
       - main
+
   pull_request:
     branches:
       - main
@@ -20,15 +21,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
-      - name: Install backend dependencies
+      - name: Install Backend Dependencies
         working-directory: ./chatbot
         run: npm install
 
-      - name: Install frontend dependencies
+      - name: Install Frontend Dependencies
         working-directory: ./frontend
         run: npm install
 
-      - name: Build React app
-        working-directory: ./MERN_CHATBOT
+      - name: Build React App
+        working-directory: ./frontend
         run: npm run build
