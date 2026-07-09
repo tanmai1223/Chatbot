@@ -251,59 +251,45 @@ body,
   scrollbar-color: #4b4b4b transparent;
 }
 
-.chatItem{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.chatItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    position:relative;
+  position: relative;
 
-    padding:12px 14px;
-    margin-bottom:6px;
+  padding: 10px 12px;
 
-    border-radius:12px;
-
-    transition:.2s;
+  cursor: pointer;
 }
 
 .chatItem:hover{
     background:#2b2b2b;
 }
 
-.chatLeft{
-    display:flex;
-    align-items:center;
-    gap:12px;
+.chatLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 
-    flex:1;
-
-    overflow:hidden;
+  flex: 1;
+  overflow: hidden;
 }
-.moreBtn{
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.moreBtn {
+  background: transparent;
+  border: none;
 
-    width:28px;
-    height:28px;
+  color: #9ca3af;
 
-    border:none;
-    border-radius:6px;
+  cursor: pointer;
 
-    background:transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    color:#9ca3af;
+  opacity: 0;
 
-    cursor:pointer;
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:
-      opacity .2s ease,
-      visibility .2s ease,
-      background .2s ease;
+  transition: opacity .2s ease;
 }
 
 .moreBtn:hover{
@@ -471,10 +457,21 @@ body,
 .overlay {
   display: none;
 }
+.moreBtn {
+  opacity: 0;
+  visibility: hidden;
+}
 
+.chatItem:hover .moreBtn {
+  opacity: 1;
+  visibility: visible;
+}
 @media (max-width: 768px) {
   /* Sidebar */
-
+.moreBtn {
+    opacity: 1;
+    visibility: visible;
+  }
   .sidebar {
     position: fixed;
 
