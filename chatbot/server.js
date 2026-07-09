@@ -11,9 +11,23 @@ db();
 
 const app=express();
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://chatbotmer.netlify.app",
+];
+
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin(origin, callback) {
+      // Allow requests without Origin (Postman, curl, mobile apps)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      callback(new Error("Not allowed by CORS"));
+    },
     exposedHeaders: ["X-Chat-Id"],
   })
 );
