@@ -4,15 +4,14 @@ An AI-powered chatbot built using the MERN Stack and the Google Gemini API. The 
 
 ## 🚀 Live Demo
 
-**Frontend:** [https://your-netlify-url.netlify.app](https://chatbotmer.netlify.app/)
+**Frontend:** https://chatbotmer.netlify.app
 
-**Backend:** [https://your-render-url.onrender.com](https://chatbot-87ar.onrender.com)
+**Backend:** https://chatbot-87ar.onrender.com
 
 ---
 
 ## 📸 Screenshots
 
-> Add screenshots of:
 - <img width="1920" height="881" alt="image" src="https://github.com/user-attachments/assets/6ecdc1df-32c6-4b8f-a72b-edcbc78240be" />
 
 - <img width="1479" height="877" alt="image" src="https://github.com/user-attachments/assets/da176f8f-83e1-4b7a-91c3-5f51792bbc28" />
@@ -90,7 +89,7 @@ AI-Chatbot
 ### Clone Repository
 
 ```bash
-git clone [https://github.com/yourusername/your-repo.git](https://github.com/tanmai1223/Chatbot)
+git clone https://github.com/tanmai1223/Chatbot
 cd your-repo
 ```
 
@@ -189,6 +188,6 @@ A CI workflow automatically:
 
 **Tanmai**
 
-GitHub: [https://github.com/yourusername](http://github.com/tanmai1223)
+GitHub: http://github.com/tanmai1223
 
-LinkedIn: [https://linkedin.com/in/yourprofile](http://linkedin.com/in/htanmai)
+LinkedIn: http://linkedin.com/in/htanmai
