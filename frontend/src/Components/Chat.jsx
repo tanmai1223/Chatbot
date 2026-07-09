@@ -48,7 +48,7 @@ function Chat() {
 
   // Load last opened chat
   useEffect(() => {
-    const savedChatId = localStorage.getItem("chatId");
+    const savedChatId = sessionStorage.getItem("chatId");
     if (savedChatId) {
       setChatId(savedChatId);
     }
@@ -167,7 +167,7 @@ function Chat() {
         await fetchChats();
 
         setChatId(currentChatId);
-        localStorage.setItem("chatId", currentChatId);
+        sessionStorage.setItem("chatId", currentChatId);
       }
 
       // Sync messages from DB
@@ -204,7 +204,7 @@ function Chat() {
     }
   };
   const handleNewChat = async () => {
-  localStorage.removeItem("chatId");
+  sessionStorage.removeItem("chatId");
   setChatId(null);
   setMessages([]);
   setChat("");
@@ -217,7 +217,7 @@ function Chat() {
 
   const handleSelectChat = (id) => {
     setChatId(id);
-    localStorage.setItem("chatId", id);
+    sessionStorage.setItem("chatId", id);
   };
 
   const renameChat = async (id, title) => {
@@ -256,7 +256,7 @@ function Chat() {
       if (chatId === id) {
         setChatId(null);
         setMessages([]);
-        localStorage.removeItem("chatId");
+        sessionStorage.removeItem("chatId");
       }
 
       setDeleteModal(false);
